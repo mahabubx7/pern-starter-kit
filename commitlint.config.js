@@ -16,7 +16,6 @@ module.exports = {
         'test',
         'chore',
         'revert',
-        'wip',
       ],
     ],
   },

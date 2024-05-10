@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "lint-staged": "lint-staged — config .lintstagedrc",
-    "commit": "cz-customizable",
+    "commit": "./node_modules/cz-customizable/standalone.js",
     "commitlint": "commitlint --edit"
   },
   "devDependencies": {
@@ -34,6 +34,12 @@
   },
   "homepage": "https://github.com/mahabubx7/pern-starter-kit.git#readme",
   "config": {
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ],
+      "path": "./commitlint.config.js"
+    },
     "commitizen": {
       "path": "cz-customizable"
     }
