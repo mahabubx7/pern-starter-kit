@@ -12,7 +12,11 @@
   "scripts": {
     "lint-staged": "lint-staged — config .lintstagedrc",
     "commit": "./node_modules/cz-customizable/standalone.js",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "server": "yarn workspace server",
+    "client": "yarn workspace client",
+    "build": "yarn workspace client build && yarn workspace server build",
+    "dev": "concurrently -c blue,green -n server,client \"yarn server start\" \"yarn client dev\""
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
