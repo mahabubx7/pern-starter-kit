@@ -21,8 +21,8 @@
     "baseUrl": "./",
     "paths": {
       "*": ["node_modules/*"],
-      "@config/*": ["src/config/*"],
       "@app/*": ["src/app/*"],
+      "@config/*": ["src/config/*"],
       "src/*": ["src/*"]
     }
   },

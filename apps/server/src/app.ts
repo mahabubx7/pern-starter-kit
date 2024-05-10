@@ -4,7 +4,7 @@ import env from '@config/env'
 import logger from '@config/logger'
 import corsOptions from '@config/cors'
 import globalRouter from '@app/router'
-import { authenticatePostgresDb } from '@config/sequelize'
+import { authenticatePostgresDb } from '@config/orm'
 
 const app: Express = express() // Express app instance
 

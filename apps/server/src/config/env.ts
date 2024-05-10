@@ -33,9 +33,17 @@ const env = {
   host: parser.key<string>('HOST', '0.0.0.0').url().get(),
   logLevel: parser.key('LOG_LEVEL', 'info').get(),
   databases: {
-    postgres: parser
-      .key('POSTGRES_URI', 'postgres://postgres:postgres@127.0.0.1:5432/pern')
-      .get(),
+    postgres: {
+      name: parser.key('DB_NAME', 'pern_db').get(),
+      user: parser.key('DB_USER', 'postgres').get(),
+      password: parser.key('DB_PASSWORD', 'postgres').get(),
+      host: parser.key('DB_HOST', '127.0.0.1').get(),
+      port: parser.key<number>('DB_PORT', 5432).integer().unsigned().get(),
+      type: 'postgres', // fixed for postgres
+    },
+    // postgres: parser
+    //   .key('POSTGRES_URI', 'postgres://postgres:postgres@127.0.0.1:5432/pern')
+    //   .get(),
     redis: parser.key('REDIS_URI', 'redis://127.0.0.1:6379/pern').get(),
   },
   // add more as you need ...

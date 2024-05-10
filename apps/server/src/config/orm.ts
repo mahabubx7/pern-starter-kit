@@ -7,9 +7,17 @@ import logger from './logger'
 | * Database connection client <postgres>
 |============================================
 */
-const sequelize = new Sequelize(env.databases.postgres, {
+
+const { user, password, name, host, port, type } = env.databases.postgres
+
+const orm = new Sequelize({
+  username: user,
+  password,
+  database: name,
+  host,
+  port,
   logging: env.isDevelopment,
-  dialect: 'postgres',
+  dialect: type,
   dialectOptions: {
     ssl: env.isProduction,
   },
@@ -22,11 +30,11 @@ const sequelize = new Sequelize(env.databases.postgres, {
 
 export const authenticatePostgresDb = async () => {
   try {
-    await sequelize.authenticate()
+    await orm.authenticate()
     logger.info('⛁ Postgres connected successfully!')
   } catch (error) {
     logger.error('❌ Unable to connect to the database:', error)
   }
 }
 
-export default sequelize
+export default orm

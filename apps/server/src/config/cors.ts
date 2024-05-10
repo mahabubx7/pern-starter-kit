@@ -33,7 +33,7 @@ function getOrigin(): string[] | '*' {
 const corsOptions: CorsOptions = {
   origin: getOrigin(),
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  // methods: [], // GET, POST, etc.
+  // methods: '', // GET, POST, etc.
   // allowedHeaders: [] // 'X-API-SECRET', etc.
 }
 
