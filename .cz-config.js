@@ -43,12 +43,20 @@ module.exports = {
       { name: 'style' },
       { name: 'test' },
       { name: 'hotfix' },
+      { name: 'workspace' },
+      { name: 'server' },
+      { name: 'client' },
+      { name: 'common' },
     ],
     fix: [
       { name: 'merge' },
       { name: 'style' },
       { name: 'test' },
       { name: 'hotfix' },
+      { name: 'workspace' },
+      { name: 'server' },
+      { name: 'client' },
+      { name: 'common' },
     ],
     docs: [
       { name: 'readme' },
@@ -126,4 +134,4 @@ module.exports = {
   // skip any questions you want
   skipQuestions: ['footer', 'breaking'],
   subjectLimit: 100,
-};
+}

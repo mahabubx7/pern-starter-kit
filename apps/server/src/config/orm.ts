@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize'
 import env from '@config/env'
 import logger from './logger'
+
 /*
 |============================================
 | @Sequelize (ORM) client
@@ -10,10 +11,20 @@ import logger from './logger'
 
 const { user, password, name, host, port, type } = env.databases.postgres
 
+function getDb() {
+  if (process.env.NODE_ENV === 'production') {
+    return name + '_prod'
+  } else if (process.env.NODE_ENV === 'test') {
+    return name + '_test'
+  } else {
+    return name + '_dev'
+  }
+}
+
 const orm = new Sequelize({
   username: user,
   password,
-  database: name,
+  database: getDb(),
   host,
   port,
   logging: env.isDevelopment,
