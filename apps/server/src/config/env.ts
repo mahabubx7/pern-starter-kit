@@ -34,7 +34,7 @@ const env = {
   logLevel: parser.key('LOG_LEVEL', 'info').get(),
   databases: {
     postgres: parser
-      .key('POSTGRES_URI', 'postgres://postgres@postgres:127.0.0.1:5432/pern')
+      .key('POSTGRES_URI', 'postgres://postgres:postgres@127.0.0.1:5432/pern')
       .get(),
     redis: parser.key('REDIS_URI', 'redis://127.0.0.1:6379/pern').get(),
   },
